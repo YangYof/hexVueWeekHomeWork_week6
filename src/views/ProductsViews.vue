@@ -69,6 +69,7 @@ export default {
         )
         .then((res) => {
           console.log(res)
+          alert('已加入購物車')
         })
         .catch((err) => {
           console.log(err)

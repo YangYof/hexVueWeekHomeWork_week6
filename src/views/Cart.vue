@@ -17,7 +17,7 @@
     <tbody>
       <tr v-for="(item) in this.$store.state.cart" :key="item.id">
         <td>
-          <button type="button" class="btn btn-outline-danger">刪除</button>
+          <button type="button" class="btn btn-outline-danger" @click="deleteCart(item.id)">刪除</button>
         </td>
         <td>
           {{item.product.title}}
@@ -47,6 +47,21 @@ import OrderInfo from '../components/OrderInfo.vue'
 export default {
   components: {
     OrderInfo
+  },
+  methods: {
+    deleteCart (id) {
+      this.$http
+        .delete(
+          `${process.env.VUE_APP_API}/v2/api/${process.env.VUE_APP_PATH}/cart/${id}`
+        )
+        .then((res) => {
+          alert('已從購物車刪除')
+          this.$store.dispatch('getCart')
+        })
+        .catch((err) => {
+          console.log(err)
+        })
+    }
   },
   mounted () {
     this.$store.dispatch('getCart')

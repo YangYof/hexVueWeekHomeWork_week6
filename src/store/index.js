@@ -6,7 +6,7 @@ export default createStore({
     products: [],
     tempProduct: {},
     cart: [],
-    final_total: {}
+    final_total: ''
   },
   mutations: {
     STATE_PRODUCTS: (state, products) => {
@@ -51,9 +51,6 @@ export default createStore({
     ProductModal: ({ commit }, item) => {
       commit('TEMP_PRODUCT', item)
     }
-    // addToCart: (item.id,qty = 1) => {
-
-    // }
   },
   modules: {}
 })

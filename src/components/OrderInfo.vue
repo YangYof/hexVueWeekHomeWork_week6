@@ -85,7 +85,6 @@ defineRule('max', max)
 loadLocaleFromURL(
   'https://unpkg.com/@vee-validate/i18n@4.1.0/dist/locale/zh_TW.json'
 )
-
 configure({
   // 用來做一些設定
   generateMessage: localize('zh_TW') // 啟用 locale
@@ -113,7 +112,9 @@ export default {
           { data: { user }, message }
         )
         .then((res) => {
+          alert('訂單已送出')
           this.$store.dispatch('getCart')
+          this.user = {}
         })
         .catch((err) => {
           console.log(err)

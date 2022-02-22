@@ -22,4 +22,7 @@ npm run lint
 
 ### Customize configuration
 See [Configuration Reference](https://cli.vuejs.org/config/).
+
 # hexVueWeekHomeWork_week6
+
+https://yangyof.github.io/hexVueWeekHomeWork_week6/#/

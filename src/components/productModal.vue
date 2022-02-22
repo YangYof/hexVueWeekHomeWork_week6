@@ -81,7 +81,7 @@ export default {
   data () {
     return {
       modal: null,
-      productNum: 0
+      productNum: ''
     }
   },
   methods: {
@@ -101,6 +101,8 @@ export default {
         .then((res) => {
           console.log(res)
           this.modal.hide()
+          alert('已加入購物車')
+          this.productNum = ''
         })
         .catch((err) => {
           console.log(err)
