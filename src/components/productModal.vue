@@ -99,10 +99,14 @@ export default {
           { data: item }
         )
         .then((res) => {
-          console.log(res)
-          this.modal.hide()
-          alert('已加入購物車')
-          this.productNum = ''
+          if (this.productNum > 0) {
+            this.modal.hide()
+            alert('已加入購物車')
+            this.productNum = ''
+          } else {
+            alert('請輸入正確數字')
+            this.productNum = ''
+          }
         })
         .catch((err) => {
           console.log(err)

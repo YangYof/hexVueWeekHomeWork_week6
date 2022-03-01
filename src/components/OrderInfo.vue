@@ -103,7 +103,8 @@ export default {
     }
   },
   methods: {
-    sendOrder () {
+    sendOrder (value, { resetForm }) {
+      console.log(value)
       const user = this.user
       const message = this.message
       this.$http
@@ -113,6 +114,7 @@ export default {
         )
         .then((res) => {
           alert('訂單已送出')
+          resetForm()
           this.$store.dispatch('getCart')
           this.user = {}
         })
@@ -122,7 +124,7 @@ export default {
     },
     isPhone (value) {
       const phoneNumber = /^(09)[0-9]{8}$/
-      return phoneNumber.test(value) ? true : '需要正確的電話號碼'
+      return phoneNumber.test(value) ? true : '需要正確的電話號碼(09XX-XXX-XXX)'
     }
   }
 }
